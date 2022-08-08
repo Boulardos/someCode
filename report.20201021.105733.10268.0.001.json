@@ -1,0 +1,416 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20201021.105733.10268.0.001.json",
+    "dumpEventTime": "2020-10-21T10:57:33Z",
+    "dumpEventTimeStamp": "1603270653209",
+    "processId": 10268,
+    "cwd": "C:\\Users\\domel\\moneylego",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\domel\\AppData\\Roaming\\npm/node_modules/ganache-cli/cli.js",
+      "-d",
+      "-f",
+      "https://sandbox.truffleteams.com/b5dd09c5-42f8-4939-a30b-a4b3917ed876",
+      "-i",
+      "999",
+      "-u",
+      "0xcbdbf7A101Bb22F5a26E0d7C7360210C6826b1Ac"
+    ],
+    "nodejsVersion": "v12.16.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.16.1",
+      "v8": "7.8.279.23-node.31",
+      "uv": "1.34.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.16.1/node-v12.16.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.16.1/node-v12.16.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.16.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18363",
+    "osVersion": "Windows 10 Home",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx  ",
+        "speed": 1996,
+        "user": 2090359,
+        "nice": 0,
+        "sys": 1186593,
+        "idle": 17900406,
+        "irq": 104921
+      },
+      {
+        "model": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx  ",
+        "speed": 1996,
+        "user": 1109140,
+        "nice": 0,
+        "sys": 720750,
+        "idle": 19347250,
+        "irq": 14468
+      },
+      {
+        "model": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx  ",
+        "speed": 1996,
+        "user": 3186218,
+        "nice": 0,
+        "sys": 817687,
+        "idle": 17173250,
+        "irq": 11218
+      },
+      {
+        "model": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx  ",
+        "speed": 1996,
+        "user": 1430515,
+        "nice": 0,
+        "sys": 487921,
+        "idle": 19258703,
+        "irq": 6125
+      },
+      {
+        "model": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx  ",
+        "speed": 1996,
+        "user": 2125203,
+        "nice": 0,
+        "sys": 1016078,
+        "idle": 18035875,
+        "irq": 10015
+      },
+      {
+        "model": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx  ",
+        "speed": 1996,
+        "user": 1442109,
+        "nice": 0,
+        "sys": 364187,
+        "idle": 19370843,
+        "irq": 4343
+      },
+      {
+        "model": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx  ",
+        "speed": 1996,
+        "user": 2304875,
+        "nice": 0,
+        "sys": 887250,
+        "idle": 17985015,
+        "irq": 9640
+      },
+      {
+        "model": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx  ",
+        "speed": 1996,
+        "user": 1519140,
+        "nice": 0,
+        "sys": 471031,
+        "idle": 19186968,
+        "irq": 21765
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "b0:fc:36:cf:a3:3d",
+        "address": "fe80::b043:97c3:3253:59b8",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 11
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "b0:fc:36:cf:a3:3d",
+        "address": "192.168.0.18",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "LAPTOP-GTJBNRM4"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff6225219f9",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
+    },
+    {
+      "pc": "0x00007ff622525e1c",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28316"
+    },
+    {
+      "pc": "0x00007ff622524dd8",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24152"
+    },
+    {
+      "pc": "0x00007ff6226234cb",
+      "symbol": "v8::base::CPU::has_sse+38363"
+    },
+    {
+      "pc": "0x00007ff622e39f4e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff622e22021",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff622cee57c",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff622cf97d0",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x00007ff622cf62f4",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x00007ff622cebb13",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff622cea184",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2452"
+    },
+    {
+      "pc": "0x00007ff622d0b36d",
+      "symbol": "v8::internal::Factory::NewFillerObject+61"
+    },
+    {
+      "pc": "0x00007ff622a70adf",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+1295"
+    },
+    {
+      "pc": "0x00007ff623284ddd",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+546637"
+    },
+    {
+      "pc": "0x000003069de0c49a",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 1840087040,
+    "totalCommittedMemory": 1840087040,
+    "usedMemory": 1829365512,
+    "availableMemory": 43631528,
+    "memoryLimit": 1877999616,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 32808,
+        "used": 32808,
+        "available": 0
+      },
+      "new_space": {
+        "memorySize": 4194304,
+        "committedMemory": 4194304,
+        "capacity": 2094912,
+        "used": 6080,
+        "available": 2088832
+      },
+      "old_space": {
+        "memorySize": 1769095168,
+        "committedMemory": 1769095168,
+        "capacity": 1765086336,
+        "used": 1763551128,
+        "available": 1535208
+      },
+      "code_space": {
+        "memorySize": 2265088,
+        "committedMemory": 2265088,
+        "capacity": 1859584,
+        "used": 1859584,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 6295552,
+        "committedMemory": 6295552,
+        "capacity": 6048720,
+        "used": 6048720,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 57925632,
+        "committedMemory": 57925632,
+        "capacity": 57864408,
+        "used": 57864408,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 49152,
+        "committedMemory": 49152,
+        "capacity": 2784,
+        "used": 2784,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 2094912,
+        "used": 0,
+        "available": 2094912
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 1993.36,
+    "kernelCpuSeconds": 1831.19,
+    "cpuConsumptionPercent": 54.0343,
+    "maxRss": 1880961024,
+    "pageFaults": {
+      "IORequired": 3767108,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 222,
+      "writes": 421807
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=::": "::\\",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\domel\\AppData\\Roaming",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "132303743887027985",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "LAPTOP-GTJBNRM4",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "configsetroot": "C:\\WINDOWS\\ConfigSetRoot",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "ETHEREUM_SOCKET": "\\\\.\\pipe\\geth.ipc",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\domel",
+    "LOCALAPPDATA": "C:\\Users\\domel\\AppData\\Local",
+    "LOGONSERVER": "\\\\LAPTOP-GTJBNRM4",
+    "NUMBER_OF_PROCESSORS": "8",
+    "OneDrive": "C:\\Users\\domel\\OneDrive",
+    "OneDriveConsumer": "C:\\Users\\domel\\OneDrive",
+    "OS": "Windows_NT",
+    "Path": "C:\\Python27\\;C:\\Python27\\Scripts;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Geth;C:\\ProgramData\\chocolatey\\bin;C:\\Users\\domel\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Sublime Text 3;C:\\Program Files\\nodejs\\;\"C:\\Users\\domel\\moneylego\\tenderly_0.9.1_Windows_amd64.tar;\";C:\\Users\\domel\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\domel\\AppData\\Local\\atom\\bin;C:\\Program Files\\Sublime Text 3;C:\\Users\\domel\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\domel\\AppData\\Roaming\\npm;C:\\Users\\domel\\AppData\\Local\\GitHubDesktop\\bin",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "AMD64 Family 23 Model 17 Stepping 0, AuthenticAMD",
+    "PROCESSOR_LEVEL": "23",
+    "PROCESSOR_REVISION": "1100",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PSModulePath": "C:\\Users\\domel\\OneDrive\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "SESSIONNAME": "Console",
+    "subl": "C:\\Program Files\\Sublime Text 3",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\domel\\AppData\\Local\\Temp",
+    "tenderly": "C:\\Users\\domel\\Flashtest\\tenderly.exe",
+    "TMP": "C:\\Users\\domel\\AppData\\Local\\Temp",
+    "USERDOMAIN": "LAPTOP-GTJBNRM4",
+    "USERDOMAIN_ROAMINGPROFILE": "LAPTOP-GTJBNRM4",
+    "USERNAME": "domel",
+    "USERPROFILE": "C:\\Users\\domel",
+    "VS140COMNTOOLS": "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\Tools\\",
+    "windir": "C:\\WINDOWS"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\Program Files\\Bitdefender\\Bitdefender Security\\atcuf\\264751406069692237\\atcuf64.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\MSASN1.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\System32\\profapi.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\WINDOWS\\System32\\cfgmgr32.dll",
+    "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\System32\\powrprof.dll",
+    "C:\\WINDOWS\\System32\\UMPDC.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\System32\\kernel.appcore.dll",
+    "\\\\?\\C:\\Users\\domel\\AppData\\Roaming\\npm\\node_modules\\ganache-cli\\node_modules\\secp256k1\\prebuilds\\win32-x64\\node.napi.node",
+    "\\\\?\\C:\\Users\\domel\\AppData\\Roaming\\npm\\node_modules\\ganache-cli\\node_modules\\keccak\\prebuilds\\win32-x64\\node.napi.node",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\WINDOWS\\System32\\fwpuclnt.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll"
+  ]
+}

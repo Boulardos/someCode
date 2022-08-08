@@ -2,20 +2,25 @@ const Web3 = require('web3');
 const BN = require('bn.js');
 require('dotenv').config(); 
 
-// const web3 = new Web3 (
-//     new Web3.providers.WebsocketProvider('wss://mainnet.infura.io/ws/v3/262187caeacd4fe8ad8e761bfb3665e2')
-// );
-// var Tx = require("ethereumjs-tx");
-// const myaccount = "0xcbdbf7A101Bb22F5a26E0d7C7360210C6826b1Ac";
-// const privateKey = Buffer.from("F2E5F.....................", "hex");
+
 
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const myaccount = "0x1628E66dF4752C670b430E6ac087Ab1B3D6b35b2";
-const Dittoaccount = "0xD0D5487D171590d9504ef149A7DF2A358774a628";
+const myaccount = "0xD3378cc43c7Ef51bFcbD924E6028B495994dCA71";
 
-const provider = new HDWalletProvider(process.env.DittoPrivKey, 'https://bsc-dataseed1.binance.org:443');
+const provider = new HDWalletProvider(process.env.BOTprivK, 'https://bsc-dataseed1.binance.org:443');
 const web3 = new Web3(provider);
+//web3.eth.getBlockNumber().then(blockNum => console.log('last block',blockNum))
+
+// const web3 = new Web3(new Web3.providers.WebsocketProvider('wss://ws-nd-123-456-789.p2piwss://hidden-holy-sky.bsc.quiknode.pro/094839c7022833d5798706d9311e32c7aef24f07/fy.com/3c6e0b8a9c15224a8228b9a98ca1531d'));
+// web3.eth.getBlockNumber().then(console.log);
+
+// const web3 = new Web3('https://hidden-holy-sky.bsc.quiknode.pro/094839c7022833d5798706d9311e32c7aef24f07/');
+// const web3 = new Web3('wss://hidden-holy-sky.bsc.quiknode.pro/094839c7022833d5798706d9311e32c7aef24f07/');
+
+// web3.eth.getBlock('latest').then(answer => console.log(answer))
+
+	
 
 const erc20 = require ('@studydefi/money-legos/erc20');
 const Bep20abi = [{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"delegator","type":"address"},{"indexed":true,"internalType":"address","name":"fromDelegate","type":"address"},{"indexed":true,"internalType":"address","name":"toDelegate","type":"address"}],"name":"DelegateChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"delegate","type":"address"},{"indexed":false,"internalType":"uint256","name":"previousBalance","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"newBalance","type":"uint256"}],"name":"DelegateVotesChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[],"name":"DELEGATION_TYPEHASH","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"DOMAIN_TYPEHASH","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint32","name":"","type":"uint32"}],"name":"checkpoints","outputs":[{"internalType":"uint32","name":"fromBlock","type":"uint32"},{"internalType":"uint256","name":"votes","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"delegatee","type":"address"}],"name":"delegate","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"delegatee","type":"address"},{"internalType":"uint256","name":"nonce","type":"uint256"},{"internalType":"uint256","name":"expiry","type":"uint256"},{"internalType":"uint8","name":"v","type":"uint8"},{"internalType":"bytes32","name":"r","type":"bytes32"},{"internalType":"bytes32","name":"s","type":"bytes32"}],"name":"delegateBySig","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"delegator","type":"address"}],"name":"delegates","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"getCurrentVotes","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getOwner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"},{"internalType":"uint256","name":"blockNumber","type":"uint256"}],"name":"getPriorVotes","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_to","type":"address"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"mint","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"nonces","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"numCheckpoints","outputs":[{"internalType":"uint32","name":"","type":"uint32"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"}];
@@ -680,57 +685,286 @@ let PAIRS = [];
 let pairevents = [];
 
 
-const balance = async () => {
-    let bal =  await cake.methods.balanceOf('0x1628E66dF4752C670b430E6ac087Ab1B3D6b35b2').call();
-    console.log('bal', bal);
+var ethers = require("ethers");
+var url = "wss://hidden-holy-sky.bsc.quiknode.pro/094839c7022833d5798706d9311e32c7aef24f07/";
+// wss://avax-ws.lirax.app:8443
+// wss://speedy-nodes-nyc.moralis.io/1a2b3c4d5e6f1a2b3c4d5e6f/avalanche/mainnet/ws
+let grasshopper;
+const pcsAbi = new ethers.utils.Interface(routerabi);
+let token = cakeAddress; 
+token = "0x4e6415a5727ea08aae4580057187923aec331227";
+
+
+
+let init = function () {
+  
+  let bnbAdded;
+  var BN = web3.utils.BN;
+  let customWsProvider = new ethers.providers.WebSocketProvider(url);
+  grasshopper = 0;
+  customWsProvider.on("pending", (txHash) => {
+    customWsProvider.getTransaction(txHash)
+	.then(async(tx) =>
+	{  
+        if (grasshopper === 0) {
+          console.log("🚧  And, Yes..I am actually working...trust me...");
+          grasshopper = 1;
+        }
+        if (tx && tx.to) {
+          if (ethers.utils.getAddress(tx.to) === 
+              ethers.utils.getAddress(routerAddress)){
+		    // console.log('tx pcs router pending');		  
+            const re1 = new RegExp("^0xf305d719"); // addliquidityETH
+            const re2 = new RegExp("^0x4bb278f3"); // Finalize
+            // if (re1.test(tx.data) || re2.test(tx.data))
+			if (re1.test(tx.data) || re2.test(tx.data))
+			 {
+				console.log(' pcs router Addliquidity tx pending'); 
+                const decodedInput = pcsAbi.parseTransaction({
+                data: tx.data,
+                value: tx.value,
+              });
+			  // console.log(decodedInput);
+			//   console.log('amount liquidity added in BNB ', parseInt(bnbAdded)/1e18);
+			  bnbAdded = decodedInput.value.toString();
+			  console.log({
+				function_name: decodedInput.name,
+				amountBNB: parseInt(decodedInput.value)/1e18,
+				from: tx.from,
+				token0: decodedInput.args[0],
+				// token1: decodedInput.args[1],
+				// erc20Value: Number(decodedInput.args[1])
+			  });  
+			  console.log('txHash', txHash);
+              if (
+                ethers.utils.getAddress(token) ===
+                ethers.utils.getAddress(decodedInput.args[0]) 
+				&&
+				parseInt(bnbAdded) > 9e18 
+                // ethers.utils.getAddress(token) ===
+                // ethers.utils.getAddress(cakeAddress)
+              ) {
+                customWsProvider.off("pending");
+                // if (tokens.buyDelay > 0) {
+                //   await Wait(tokens.buyDelay);
+                // }
+                //await BuyToken(tx);
+				// console.log('enough BNB liquidity added');
+				let path = [wbnbAddress, token];    
+				// let block = await web3.eth.getBlock('latest');
+				// let sellDeadline = block.timestadmp + 300; // adding 5 min(300) - unix time,  
+				let sellDeadline = parseInt(Date.now()/1000) + 300;
+                let oneE18 = '1000000000000000000';
+	            let oneE15 = '1000000000000000';
+            	let amount = 500; // amount BNB  1000 = 1 BNB
+            	let BNamount = new BN(amount).mul(new BN(oneE15)); 
+				console.log('enough BNB liquidity added');
+
+				await router.methods.swapExactETHForTokensSupportingFeeOnTransferTokens
+				 (10, path, myaccount, sellDeadline)
+			     .send({from: myaccount, value: BNamount, gas: '2000000',
+			     gasPrice: web3.utils.toWei("5", 'gwei')});
+			
+				 // path = [busdAddress, token]; 
+				// swapExactTokensForTokensSupportingFeeOnTransferTokens(BNamount, 10, path, myaccount, sellDeadline)
+				//  .send({from: myaccount, gas: '2000000', gasPrice: web3.utils.toWei("50", 'gwei')});
+
+				console.log('BUYING TOKEN____________________________________________________________'); 
+              }
+            }
+          }
+        }
+      }).catch(() => {});
+  });
+  customWsProvider._websocket.on("error", async () => {
+    console.log(`Unable to connect to ${ep.subdomain} retrying in 3s...`);
+    setTimeout(init, 3000);
+  });
+  customWsProvider._websocket.on("close", async (code) => {
+    console.log(
+      `Connection lost with code ${code}! Attempting reconnect in 3s...`
+    );
+    customWsProvider._websocket.terminate();
+    setTimeout(init, 3000);
+  });
+};
+init();
+
+ let initBUSD = function () {
+  
+	let bnbAdded;
+	var BN = web3.utils.BN;
+	let customWsProvider = new ethers.providers.WebSocketProvider(url);
+	grasshopper = 0;
+	customWsProvider.on("pending", (txHash) => {
+	  customWsProvider.getTransaction(txHash)
+	  .then(async(tx) =>
+	  {  
+		  if (grasshopper === 0) {
+			console.log("🚧  And, Yes..I am actually working...trust me...");
+			grasshopper = 1;
+		  }
+		  if (tx && tx.to) {
+			if (ethers.utils.getAddress(tx.to) === 
+				ethers.utils.getAddress(routerAddress)){
+			  // console.log('tx pcs router pending');		  
+			  const re1 = new RegExp("^0xe8e33700"); // addliquidity()
+			  const re2 = new RegExp("^0x4bb278f3"); // Finalize()
+			  // if (re1.test(tx.data) || re2.test(tx.data))
+			  if (re1.test(tx.data) || re2.test(tx.data))
+			   {
+				  console.log(' pcs router Addliquidity tx pending'); 
+				  const decodedInput = pcsAbi.parseTransaction({
+				  data: tx.data,
+				  value: tx.value,
+				});
+				// console.log(decodedInput);
+			  //   console.log('amount liquidity added in BNB ', parseInt(bnbAdded)/1e18);
+				bnbAdded = decodedInput.value.toString();
+				console.log({
+				  function_name: decodedInput.name,
+				  amountBNB: parseInt(decodedInput.value)/1e18,
+				  from: tx.from,
+				  token0: decodedInput.args[0],
+				  token1: decodedInput.args[1],
+				  // erc20Value: Number(decodedInput.args[1])
+				});  
+				console.log('txHash', txHash);
+				if (
+				  ethers.utils.getAddress(token) ===
+				  ethers.utils.getAddress(decodedInput.args[1]) 
+				  &&
+				  parseInt(bnbAdded) >= 9000e18 
+				  // ethers.utils.getAddress(token) ===
+				  // ethers.utils.getAddress(cakeAddress)
+				) {
+				  customWsProvider.off("pending");
+				  // if (tokens.buyDelay > 0) {
+				  //   await Wait(tokens.buyDelay);
+				  // }
+				  //await BuyToken(tx);
+				  // console.log('enough BNB liquidity added');
+				  // let path = [wbnbAddress, token];    
+				  // let block = await web3.eth.getBlock('latest');
+				  // let sellDeadline = block.timestadmp + 300; // adding 5 min(300) - unix time,  
+				  let sellDeadline = parseInt(Date.now()/1000) + 300;
+				  let oneE18 = '1000000000000000000';
+				  let oneE15 = '1000000000000000';
+				  let amount = 20; // amount BNB  1000 = 1 BNB
+				  let BNamount = new BN(amount).mul(new BN(oneE15)); 
+				  console.log('enough BUSD liquidity added to buyyyyyy');
+			  
+				  let path = [busdAddress, token]; 
+				  await router.methods.swapExactTokensForTokensSupportingFeeOnTransferTokens(BNamount, 10, path, myaccount, sellDeadline)
+				   .send({from: myaccount, gas: '2000000', gasPrice: web3.utils.toWei("5", 'gwei')});
+  
+				  console.log('BUYING TOKEN____________________________________________________________'); 
+				}
+			  }
+			}
+		  }
+		}).catch(() => {});
+	});
+	customWsProvider._websocket.on("error", async () => {
+	  console.log(`Unable to connect to ${ep.subdomain} retrying in 3s...`);
+	  setTimeout(init, 3000);
+	});
+	customWsProvider._websocket.on("close", async (code) => {
+	  console.log(
+		`Connection lost with code ${code}! Attempting reconnect in 3s...`
+	  );
+	  customWsProvider._websocket.terminate();
+	  setTimeout(init, 3000);
+	});
+  };
+ // initBUSD();
+
+
+let test = function () {
+	let bnbAdded;
+	var BN = web3.utils.BN;
+	let path = [wbnbAddress, token];  
+	
+		 web3.eth.getBlock('latest').then( (block) => {
+		// let sellDeadline = block.timestadmp + 300; // adding 5 min(300) - unix time,  
+		// console.log('selldead', sellDeadline);
+		let oneE18 = '1000000000000000000';
+		let oneE15 = '1000000000000000';
+		let amount = 100; // amount BNB  1000 = 1 BNB
+	//	let BNamount = new BN(amount).mul(new BN(oneE15)); 
+		console.log('enough BNB liquidity added');
+		// router.methods.swapExactETHForTokensSupportingFeeOnTransferTokens(10, path, myaccount, sellDeadline)
+		//  .send({from: myaccount, value: '1000000000000', gas: '2000000', gasPrice: web3.utils.toWei("10", 'gwei')});
+		// console.log('BUYING TOKEN____________________');
+		 }).catch((e)=>console.log('erreeeur',e));
+	let customWsProvider = new ethers.providers.WebSocketProvider(url);
+	grasshopper = 0;
+	// web3.eth.getBlockNumber().then(blockNum => console.log('last block',blockNum));
+	customWsProvider.on("pending", (txHash) => {
+	  customWsProvider.getTransaction(txHash)
+	  .then(async(tx) =>
+	  {  
+		// console.log(tx);  
+		let date = parseInt(Date.now()/1000);
+		console.log('date',date);
+		let Bnum = await web3.eth.getBlockNumber();
+		Bnum = await customWsProvider.getBlockNumber();
+		Bnum = await customWsProvider.getBlock(Bnum);
+		// console.log(Bnum);
+		Bnum = Bnum.blocktimestamp;
+		console.log(Bnum);
+		let b = await web3.eth.getBlockNumber();
+		console.log(b);
+		let block = await web3.eth.getBlock('latest');
+		let sellDeadline = block.timestadmp + 300; // adding 5 min(300) - unix time,  
+		sellDeadline = date + 300;
+		console.log('selldeadline', sellDeadline);
+		// let  Block = await customWsProvider.getBlock();
+		// console.log(block);
+		customWsProvider.off("pending");
+		
+		let path = [wbnbAddress, token];  
+		//  block = await web3.eth.getBlock('latest');
+		//  sellDeadline = block.timestadmp + 300; // adding 5 min(300) - unix time,  
+		//  console.log('selldeadline2', sellDeadline);
+		let oneE18 = '1000000000000000000';
+		let oneE15 = '1000000000000000';
+		let amount = 1; // amount BNB  1000 = 1 BNB
+		let BNamount = new BN(amount).mul(new BN(oneE15)); 
+		console.log('enough BNB liquidity added');
+		await router.methods.swapExactETHForTokensSupportingFeeOnTransferTokens(10, path, myaccount, sellDeadline)
+		 .send({from: myaccount, value: BNamount, gas: '2000000',
+		 gasPrice: web3.utils.toWei("10", 'gwei')});
+		console.log('BUYING TOKEN____________________');
+	  
+	}).catch(() => {});
+  })
+  customWsProvider._websocket.on("error", async () => {
+    console.log(`Unable to connect to ${ep.subdomain} retrying in 3s...`);
+    setTimeout(init, 3000);
+  });
+  customWsProvider._websocket.on("close", async (code) => {
+    console.log(
+      `Connection lost with code ${code}! Attempting reconnect in 3s...`
+    );
+    customWsProvider._websocket.terminate();
+    setTimeout(init, 3000);
+  });
 }
-// balance();
+// test();
 
-
-
-
-const btd = '0xD1102332a213E21faF78B69C03572031F3552c33';
-const turbo = '0xe4a43f8Bdaf4fC6a3b118A5448983fe783724BC8';
-let learnT = '0xe980166DfcCbB85723AE47dA787183c43d11FBda';
-
-async function getLiquidity(tokenA) {
-
-	var pairBnbAddress = await factory.methods.getPair(tokenA, wbnbAddress).call(); 
-	var pairBusdAddress = await factory.methods.getPair(tokenA, busdAddress).call(); 
-   
-    let pairBnb = new web3.eth.Contract(uniswapV2pairabi, pairBnbAddress);
-	let pairBusd = new web3.eth.Contract(uniswapV2pairabi, pairBusdAddress);
-
-	let reservePairBnb = await pairBnb.methods.getReserves().call();
-	let token0 = await pairBnb.methods.token0().call();
-	let reserveBnb = token0 == wbnbAddress ?  reservePairBnb[0] : reservePairBnb[1];
-
-	let reservePairBusd = await pairBusd.methods.getReserves().call();
-	token0 = await pairBusd.methods.token0().call();
-	let reserveBusd = token0 == busdAddress ?  reservePairBusd[0] : reservePairBusd[1];
-
-	console.log('reserve pool BNB', reserveBnb/1e18);
-	console.log('reserve pool BUSD', reserveBusd/1e18);
-}
-//  getLiquidity(cakeAddress);
-
-const learn = "0xe980166DfcCbB85723AE47dA787183c43d11FBda"; 
-const meowth = "0xe561479bebee0e606c19bb1973fc4761613e3c42";
-const newtoken = "0n";
-
-// web3.eth.sendTransaction({to:"0x9133F68392A8Dc204Fa8DD2e023642D769a24096", from: Dittoaccount, value: web3.utils.toWei("0.0002", "ether")});
 
 const buynewToken = async (newTokenaddress) => { 
 try {	
     out = true;
 	var BN = web3.utils.BN;
 
-	const pairAddress = await factory.methods.getPair(newTokenaddress, wbnbAddress).call();
-	
+	const pairAddress = await factory.methods.getPair(newTokenaddress, wbnbAddress).call();	
     console.log("paire address:", pairAddress);
+
 	let oneE18 = '1000000000000000000';
 	let oneE15 = '1000000000000000';
-	let amount = 1; 
+	let amount = 10; // amount BNB  1000 = 1 BNB
 	let BNamount = new BN(amount).mul(new BN(oneE15));
     
    if ( pairAddress != "0x0000000000000000000000000000000000000000") {
@@ -740,55 +974,52 @@ try {
 	  let pair_bnb_amount;
 	  const address0 = await pair.methods.token0().call();
 	  pair_bnb_amount = address0 == wbnbAddress ? reserve[0] : reserve[1];
-      console.log( "reserve bnb:", pair_bnb_amount/1e18);
+      console.log( "reserve de la pool en  bnb:", pair_bnb_amount/1e18);
 
-      if ( parseInt(pair_bnb_amount) > 50e18) { 
+      if ( parseInt(pair_bnb_amount) > 20e18) { 
         var path = [wbnbAddress, newTokenaddress];  
         let block = await web3.eth.getBlock('latest');
-        let sellDeadline = block.timestamp + 300; // adding 5 min(300) - unix time,   
-		let min = '200';
-		min = new BN(min);
-		console.log('TX sennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnt');
+        let sellDeadline = block.timestamp + 300; // adding 5 min(300) - unix time, 
+		// console.log('Deadline',sellDeadline);  
+		// let min = '200';
+		// min = new BN(min);
+		// console.log('TX sennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnt');
 
-	    // await router.methods.swapExactTokensForTokens(BNamount, min, path, Dittoaccount, sellDeadline)
-        //      .send({from: Dittoaccount, gas:'2000000', gasPrice: web3.utils.toWei("10", 'gwei')});	
+	    
         
-        await router.methods.swapExactETHForTokens(BNamount, path, Dittoaccount, sellDeadline)
-            .send({from: Dittoaccount, value: BNamount, gas: '2000000',
-             gasPrice: web3.utils.toWei("5", 'gwei')});	
+        // await router.methods.swapExactETHForTokens(10, path, myaccount, sellDeadline)
+        //     .send({from: myaccount, value: BNamount, gas: '2000000',
+        //      gasPrice: web3.utils.toWei("5", 'gwei')});	
 
-        console.log('tx done');            
+		// await router.methods.swapExactETHForTokensSupportingFeeOnTransferTokens(10, path, myaccount, sellDeadline)
+		// .send({from: myaccount, value: BNamount, gas: '2000000', gasPrice: web3.utils.toWei("10", 'gwei')});	
+
+		// await router.methods.swapExactTokensForTokens(BNamount, min, path, myaccount, sellDeadline)
+        //      .send({from: myaccount, gas:'2000000', gasPrice: web3.utils.toWei("5", 'gwei')});	
+        // console.log('tx done');            
              
 	   } else {out = false} 
-	 
-	//    else if (  parseInt(pair_bnb_amount) < 40e18 && parseInt(pair_bnb_amount) > 10e18)  { 
-	// 	out = true;  // tx triggered
-    //     amount = 0.1e18;
-    //     var path = [wbnbAddress, newTokenaddress];  
-    //     let block = await web3.eth.getBlock('latest');
-    //     let sellDeadline = block.timestamp + 300; // adding 5 min(300) - unix time,   
-          
-	//     // await router.methods.swapExactTokensForTokens(amountIn.toString(), 1000, path, Dittoaccount, sellDeadline)
-    //     //      .send({from: Dittoaccount, gas:'2000000', gasPrice: web3.utils.toWei("90", 'gwei')});	
-    //     console.log('cest parti');
-    //     await router.methods.swapExactETHForTokens(amount.toString(), path, Dittoaccount, sellDeadline)
-    //         .send({from: Dittoaccount, value: amount.toString(), gas: '2000000',
-    //          gasPrice: web3.utils.toWei("20", 'gwei')});	 
-    //     console.log('tx done');            
-             
-	//    }        
 
   }
 } catch (e) {console.log(e)}
 }
- buynewToken(cakeAddress);
+// buynewToken(cakeAddress);
 
-// setInterval(function()  { 
-//     if (!out) {buynewToken(newtoken)} else {console.log('out =', out)} 
-// }
-// , 50); 
+setInterval(function()  { 
+    if (!out) {buynewToken(token)} /* else {console.log('out =', out)} */
+}
+, 5000); 
 
-	
+// let tx;
+// web3_filter= web3.eth.filter('pending')
+
+//     let transaction_hashes = web3.eth.getFilterChanges(web3_filter.filter_id)
+
+//     for tx in transaction_hashes:
+
+//         Datatx = web3.eth.getTransaction(tx)
+
+
 let block = 8116872 ; // last check !!! demarrer d'un block recent sinon error
 
 const get_newpairs = async () => {
@@ -839,7 +1070,32 @@ const get_newpairs = async () => {
   }
   // setInterval (get_newpairs, 5000);
 
+  const balance = async () => {
+    let bal =  await cake.methods.balanceOf('0x1628E66dF4752C670b430E6ac087Ab1B3D6b35b2').call();
+    console.log('bal', bal);
+}
+// balance();
 
+async function getLiquidity(tokenA) {
+
+	var pairBnbAddress = await factory.methods.getPair(tokenA, wbnbAddress).call(); 
+	var pairBusdAddress = await factory.methods.getPair(tokenA, busdAddress).call(); 
+   
+    let pairBnb = new web3.eth.Contract(uniswapV2pairabi, pairBnbAddress);
+	let pairBusd = new web3.eth.Contract(uniswapV2pairabi, pairBusdAddress);
+
+	let reservePairBnb = await pairBnb.methods.getReserves().call();
+	let token0 = await pairBnb.methods.token0().call();
+	let reserveBnb = token0 == wbnbAddress ?  reservePairBnb[0] : reservePairBnb[1];
+
+	let reservePairBusd = await pairBusd.methods.getReserves().call();
+	token0 = await pairBusd.methods.token0().call();
+	let reserveBusd = token0 == busdAddress ?  reservePairBusd[0] : reservePairBusd[1];
+
+	console.log('reserve pool BNB', reserveBnb/1e18);
+	console.log('reserve pool BUSD', reserveBusd/1e18);
+}
+//  getLiquidity(cakeAddress);
 
 const buynewTokenatBLock = async () => {
     out = 1;
@@ -866,7 +1122,7 @@ const buynewTokenatBLock = async () => {
         console.log('send txxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
         await router.methods.swapExactETHForTokens(amount.toString(), path, myaccount, sellDeadline)
             .send({from: myaccount, value: amount.toString(), gas: '2000000',
-             gasPrice: web3.utils.toWei("20", 'gwei')});	 
+             gasPrice: web3.utils.toWei("10", 'gwei')});	 
         console.log('tx done !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');            
                      
     } else {out = 0};       
